@@ -185,6 +185,18 @@
     container.appendChild(conf);
   }
 </script>
+<script>
+  if (typeof gtag === 'function') {
+    gtag('event', 'purchase', {
+      transaction_id: Date.now(),
+      currency: 'IDR',
+      value: 1,
+      items: [{
+        item_name: 'Pesanan Warung Ngemil'
+      }]
+    });
+  }
+</script>
 
 </body>
 </html>
