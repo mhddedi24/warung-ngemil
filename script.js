@@ -58,3 +58,27 @@ function updateCart() {
   const pesananStr = cart.map(i => `${i.nama} (${i.qty})`).join(", ");
   checkoutBtn.href = `order.html?pesanan=${encodeURIComponent(pesananStr)}&total=${totalHarga}`;
 }
+
+// === E-COMMERCE TRACKING : ADD TO CART ===
+function kirimEventProduk(namaProduk, harga) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'add_to_cart', {
+      currency: 'IDR',
+      value: harga,
+      items: [{
+        item_name: namaProduk,
+        price: harga
+      }]
+    });
+  }
+}
+
+// pas user klik tombol "Tambah"
+document.querySelectorAll('.add-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.card');
+    const nama = card.dataset.nama;
+    const harga = parseInt(card.dataset.harga);
+    kirimEventProduk(nama, harga);
+  });
+});
