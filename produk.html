@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Produk | Warung Ngemil</title>
+<meta name="description" content="Snack terlaris Warung Ngemil. Tambahkan ke keranjang dan lanjutkan pembelian via WhatsApp.">
+<style>
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+    margin:0;
+    background:#fffaf0;
+    color:#1a1a1a;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    background:linear-gradient(90deg,#ff8a00,#ffb84d);
+    padding:14px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .cart {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#1a1a1a;
+    font-weight:600;
+  }
+
+  .cart span.icon {
+    background:#1a1a1a;
+    color:#fff;
+    width:32px;
+    height:32px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:8px;
+    box-shadow:0 4px 8px rgba(0,0,0,.3);
+  }
+
+  /* GRID PRODUK */
+  .product-grid {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  /* KARTU PRODUK */
+  .card {
+    background:#fff;
+    border:1px solid #ffd27a;
+    border-radius:10px;
+    width:220px;
+    min-height:360px;
+    padding:14px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    display:flex;
+    flex-direction:column;
+  }
+
+  .card img {
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:8px;
+    display:block;
+    margin-bottom:10px;
+    background:#000;
+  }
+
+  .card h3 {
+    margin:0 0 8px;
+    font-size:1rem;
+    font-weight:600;
+    color:#1a1a1a;
+    line-height:1.3;
+  }
+
+  .card .desc {
+    font-size:.8rem;
+    color:#444;
+    line-height:1.4;
+    margin:0 0 12px;
+  }
+
+  .price {
+    font-weight:600;
+    color:#ff8a00;
+    margin:0 0 16px;
+    font-size:0.9rem;
+  }
+
+  .card .flex-spacer {
+    flex-grow:1;
+  }
+
+  .add-btn {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    background:#ff8a00;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    border-radius:6px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .add-btn:hover {
+    background:#ff9f20;
+  }
+
+  /* KERANJANG */
+  .cart-box {
+    max-width:900px;
+    margin:40px auto;
+    background:#fff9ef;
+    border:1px solid #ffd27a;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  }
+
+  h1 {
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div><b>Warung Ngemil</b></div>
+  <a href="#keranjang" class="cart">
+    <span class="icon">🛒</span>
+    <span><span id="cart-count">0</span> item | Rp <span id="cart-total">0</span></span>
+  </a>
+</div>
+
+<!-- JUDUL -->
+<section style="text-align:center;padding:30px 20px 10px;">
+  <h1>10 Snack Favorit Anak Muda</h1>
+  <p style="color:#444;">Klik “Tambah” buat nyobain semuanya 😋</p>
+</section>
+
+<!-- PRODUK -->
+<div class="product-grid" id="product-list">
+
+  <div class="card" data-nama="Keripik Pedas Level 3" data-harga="8000">
+    <img src="img/keripik-pedas.jpeg" alt="Keripik Pedas Level 3">
+    <h3>Keripik Pedas Level 3</h3>
+    <p class="desc">Singkong renyah pedas nagih. Pilih level sesuai nyali!</p>
+    <p class="price">Rp 8.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Basreng Daebak" data-harga="9000">
+    <img src="img/basreng-daebak.jpeg" alt="Basreng Daebak">
+    <h3>Basreng Daebak</h3>
+    <p class="desc">Baso goreng kriuk dengan bumbu pedas khas Bandung.</p>
+    <p class="price">Rp 9.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Makaroni Meledak BBQ" data-harga="7000">
+    <img src="img/makaroni-meledak.jpeg" alt="Makaroni Meledak BBQ">
+    <h3>Makaroni Meledak BBQ</h3>
+    <p class="desc">Rasa BBQ & keju campur gurih kriuk maksimal.</p>
+    <p class="price">Rp 7.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Cimol Kering Pedas" data-harga="8000">
+    <img src="img/cimol-pedas.jpeg" alt="Cimol Kering Pedas">
+    <h3>Cimol Kering Pedas</h3>
+    <p class="desc">Snack viral pedas gurih ngeprul bikin nagih.</p>
+    <p class="price">Rp 8.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Kentang Sarang Gurih" data-harga="8500">
+    <img src="img/kentang-gurih.jpeg" alt="Kentang Sarang Gurih">
+    <h3>Kentang Sarang Gurih</h3>
+    <p class="desc">Kering, renyah, dan gurih dengan aroma daun jeruk segar.</p>
+    <p class="price">Rp 8.500</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Wafer Cokelat Lumer" data-harga="6000">
+    <img src="img/wafer-cokelat.jpeg" alt="Wafer Cokelat Lumer">
+    <h3>Wafer Cokelat Lumer</h3>
+    <p class="desc">Renyah di luar, krim cokelat lembut di dalam.</p>
+    <p class="price">Rp 6.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Kacang Crispy Garlic" data-harga="7500">
+    <img src="img/kacang-garlic.jpeg" alt="Kacang Crispy Garlic">
+    <h3>Kacang Crispy Garlic</h3>
+    <p class="desc">Kacang berbalut tepung rasa bawang gurih manis.</p>
+    <p class="price">Rp 7.500</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Mix Snack Party Pack" data-harga="12000">
+    <img src="img/mix-snack.jpeg" alt="Mix Snack Party Pack">
+    <h3>Mix Snack Party Pack</h3>
+    <p class="desc">Campuran keripik, makaroni, wafer, dan kacang.</p>
+    <p class="price">Rp 12.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Cheese Ball Crunch" data-harga="9500">
+    <img src="img/cheese-ball.jpeg" alt="Cheese Ball Crunch">
+    <h3>Cheese Ball Crunch</h3>
+    <p class="desc">Bola keju lembut gurih, favorit Gen Z pecinta keju.</p>
+    <p class="price">Rp 9.500</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+
+  <div class="card" data-nama="Brownies Bites Crispy" data-harga="10000">
+    <img src="img/brownies-crispy.jpeg" alt="Brownies Bites Crispy">
+    <h3>Brownies Bites Crispy</h3>
+    <p class="desc">Brownies tipis renyah rasa dark choco premium.</p>
+    <p class="price">Rp 10.000</p>
+    <div class="flex-spacer"></div>
+    <button class="add-btn"><span>🛒</span>Tambah</button>
+  </div>
+</div>
+
+<!-- KERANJANG -->
+<section id="keranjang" class="cart-box">
+  <h2>Keranjang Kamu</h2>
+  <div id="cart-items"></div>
+  <div style="border-top:1px solid #ffd27a;margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;font-weight:700;color:#ff8a00;">
+    <span>Total</span><span>Rp <span id="cart-total-bottom">0</span></span>
+  </div>
+  <a id="checkout-btn" href="order.html" style="display:block;text-align:center;background:#1a1a1a;color:#fff;text-decoration:none;font-weight:600;padding:12px;border-radius:10px;margin-top:16px;">Lanjutkan Pembelian ➜</a>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
