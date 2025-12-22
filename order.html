@@ -1,340 +1,422 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout | Warung Ngemil</title>
-<meta name="description" content="Checkout pesanan kamu di Warung Ngemil dan selesaikan pembayaran lewat WhatsApp.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-  body {
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
-    margin:0;
-    background:#fffaf0;
-    color:#1a1a1a;
+  <!-- SEO -->
+  <title>Checkout | Warung Ngemil</title>
+  <meta name="description" content="Checkout pesanan kamu di Warung Ngemil dan selesaikan pembelian lewat WhatsApp." />
+  <link rel="canonical" href="https://mhddedi24.github.io/warung-ngemil/order.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Checkout | Warung Ngemil" />
+  <meta property="og:description" content="Checkout pesanan kamu di Warung Ngemil dan selesaikan pembelian lewat WhatsApp." />
+  <meta property="og:url" content="https://mhddedi24.github.io/warung-ngemil/order.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://mhddedi24.github.io/warung-ngemil/img/bg.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Checkout | Warung Ngemil" />
+  <meta name="twitter:description" content="Checkout pesanan kamu di Warung Ngemil dan selesaikan pembelian lewat WhatsApp." />
+  <meta name="twitter:image" content="https://mhddedi24.github.io/warung-ngemil/img/bg.jpg" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPRGS5HW2E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KPRGS5HW2E');
+  </script>
+
+  <!-- Schema: Organization + WebSite + LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mhddedi24.github.io/warung-ngemil/#org",
+        "name": "Warung Ngemil",
+        "url": "https://mhddedi24.github.io/warung-ngemil/",
+        "founder": "Muhamad Dedi",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mhddedi24.github.io/warung-ngemil/#website",
+        "url": "https://mhddedi24.github.io/warung-ngemil/",
+        "name": "Warung Ngemil",
+        "publisher": { "@id": "https://mhddedi24.github.io/warung-ngemil/#org" },
+        "inLanguage": "id-ID"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://mhddedi24.github.io/warung-ngemil/#business",
+        "name": "Warung Ngemil",
+        "url": "https://mhddedi24.github.io/warung-ngemil/",
+        "telephone": "+62-895-4050-90125",
+        "priceRange": "Rp",
+        "image": "https://mhddedi24.github.io/warung-ngemil/img/bg.jpg"
+      }
+    ]
   }
+  </script>
 
-  /* NAVBAR SAMA SEPERTI INDEX & PRODUK */
-  header.site-header {
-    background: linear-gradient(90deg,#ff8a00 0%, #ffb84d 100%);
-    padding:12px 16px;
-    position:sticky;
-    top:0;
-    box-shadow:0 4px 16px rgba(0,0,0,0.15);
-    z-index:1000;
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mhddedi24.github.io/warung-ngemil/" },
+      { "@type": "ListItem", "position": 2, "name": "Order", "item": "https://mhddedi24.github.io/warung-ngemil/order.html" }
+    ]
   }
+  </script>
 
-  nav.navbar-inner {
-    max-width:1200px;
-    margin:0 auto;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    row-gap:12px;
+  <!-- (Optional, for project quality) Service schema for WhatsApp checkout -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Checkout Pesanan via WhatsApp",
+    "provider": { "@id": "https://mhddedi24.github.io/warung-ngemil/#org" },
+    "areaServed": "ID",
+    "serviceType": "Order snack via WhatsApp",
+    "url": "https://mhddedi24.github.io/warung-ngemil/order.html"
   }
+  </script>
 
-  .brand-box {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:1.1rem;
-    font-weight:700;
-    color:#1a1a1a;
-    letter-spacing:-0.03em;
-  }
+  <style>
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+      margin:0;
+      background:#fffaf0;
+      color:#1a1a1a;
+    }
 
-  .brand-tag {
-    font-size:0.7rem;
-    font-weight:500;
-    color:#4a2b00;
-    background:#fff;
-    border-radius:6px;
-    padding:4px 8px;
-    line-height:1.2;
-    border:1px solid rgba(0,0,0,0.08);
-  }
+    /* NAVBAR */
+    header.site-header {
+      background: linear-gradient(90deg,#ff8a00 0%, #ffb84d 100%);
+      padding:12px 16px;
+      position:sticky;
+      top:0;
+      box-shadow:0 4px 16px rgba(0,0,0,0.15);
+      z-index:1000;
+    }
 
-  .menu-box {
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:flex-end;
-    column-gap:20px;
-    row-gap:10px;
-    font-size:0.95rem;
-    font-weight:500;
-    color:#1a1a1a;
-  }
+    nav.navbar-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      row-gap:12px;
+    }
 
-  .menu-box a {
-    text-decoration:none;
-    color:#1a1a1a;
-  }
+    .brand-box {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:1.1rem;
+      font-weight:700;
+      color:#1a1a1a;
+      letter-spacing:-0.03em;
+    }
 
-  .cart-status {
-    display:flex;
-    align-items:center;
-    gap:8px;
-    text-decoration:none;
-    color:#1a1a1a;
-    font-weight:600;
-    font-size:0.9rem;
-  }
+    .brand-tag {
+      font-size:0.7rem;
+      font-weight:500;
+      color:#4a2b00;
+      background:#fff;
+      border-radius:6px;
+      padding:4px 8px;
+      line-height:1.2;
+      border:1px solid rgba(0,0,0,0.08);
+    }
 
-  .cart-icon-bubble {
-    background:#1a1a1a;
-    color:#fff;
-    width:32px;
-    height:32px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:8px;
-    box-shadow:0 4px 8px rgba(0,0,0,.3);
-    font-size:0.8rem;
-    line-height:1;
-  }
+    .menu-box {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+      column-gap:20px;
+      row-gap:10px;
+      font-size:0.95rem;
+      font-weight:500;
+      color:#1a1a1a;
+    }
 
-  /* CONTAINER CHECKOUT */
-  .container {
-    max-width:700px;
-    margin:40px auto;
-    background:#fff9ef;
-    border:1px solid #ffd27a;
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.06);
-  }
+    .menu-box a {
+      text-decoration:none;
+      color:#1a1a1a;
+    }
 
-  h1 {
-    text-align:center;
-    font-size:1.4rem;
-    font-weight:700;
-    margin-top:0;
-    color:#1a1a1a;
-    letter-spacing:-0.03em;
-  }
+    .cart-status {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      color:#1a1a1a;
+      font-weight:600;
+      font-size:0.9rem;
+      pointer-events:none;
+      opacity:0.8;
+    }
 
-  h2 {
-    font-size:1rem;
-    font-weight:700;
-    color:#1a1a1a;
-    margin-bottom:10px;
-    letter-spacing:-0.03em;
-  }
+    .cart-icon-bubble {
+      background:#1a1a1a;
+      color:#fff;
+      width:32px;
+      height:32px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:8px;
+      box-shadow:0 4px 8px rgba(0,0,0,.3);
+      font-size:0.8rem;
+      line-height:1;
+    }
 
-  .order-list {
-    margin-top:20px;
-  }
+    /* CONTAINER CHECKOUT */
+    .container {
+      max-width:700px;
+      margin:40px auto;
+      background:#fff9ef;
+      border:1px solid #ffd27a;
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
 
-  .item {
-    border:1px solid #ffe2a8;
-    border-radius:10px;
-    background:#fff;
-    padding:10px;
-    margin-bottom:10px;
-    font-size:0.9rem;
-    line-height:1.4;
-    color:#1a1a1a;
-    display:flex;
-    justify-content:space-between;
-  }
+    h1 {
+      text-align:center;
+      font-size:1.4rem;
+      font-weight:700;
+      margin-top:0;
+      color:#1a1a1a;
+      letter-spacing:-0.03em;
+    }
 
-  .total {
-    display:flex;
-    justify-content:space-between;
-    border-top:1px solid #ffd27a;
-    margin-top:10px;
-    padding-top:10px;
-    font-weight:700;
-    color:#ff8a00;
-    font-size:1rem;
-  }
+    h2 {
+      font-size:1rem;
+      font-weight:700;
+      color:#1a1a1a;
+      margin-bottom:10px;
+      letter-spacing:-0.03em;
+    }
 
-  input, textarea {
-    width:100%;
-    padding:10px;
-    margin-top:8px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:0.9rem;
-    outline:none;
-  }
+    .order-list { margin-top:20px; }
 
-  button {
-    width:100%;
-    background:#1a1a1a;
-    color:#fff;
-    padding:12px;
-    font-weight:600;
-    border:none;
-    border-radius:10px;
-    margin-top:20px;
-    cursor:pointer;
-    font-size:0.95rem;
-    box-shadow:0 12px 24px rgba(0,0,0,0.4);
-  }
+    .item {
+      border:1px solid #ffe2a8;
+      border-radius:10px;
+      background:#fff;
+      padding:10px;
+      margin-bottom:10px;
+      font-size:0.9rem;
+      line-height:1.4;
+      color:#1a1a1a;
+      display:flex;
+      justify-content:space-between;
+    }
 
-  footer {
-    background:#1a1a1a;
-    color:#ccc;
-    text-align:center;
-    padding:16px;
-    font-size:0.8rem;
-    margin-top:40px;
-  }
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KPRGS5HW2E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    .total {
+      display:flex;
+      justify-content:space-between;
+      border-top:1px solid #ffd27a;
+      margin-top:10px;
+      padding-top:10px;
+      font-weight:700;
+      color:#ff8a00;
+      font-size:1rem;
+    }
 
-  gtag('config', 'G-KPRGS5HW2E');
-</script>
+    input, textarea {
+      width:100%;
+      padding:10px;
+      margin-top:8px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:0.9rem;
+      outline:none;
+      box-sizing:border-box;
+    }
+
+    button {
+      width:100%;
+      background:#1a1a1a;
+      color:#fff;
+      padding:12px;
+      font-weight:600;
+      border:none;
+      border-radius:10px;
+      margin-top:20px;
+      cursor:pointer;
+      font-size:0.95rem;
+      box-shadow:0 12px 24px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      background:#1a1a1a;
+      color:#ccc;
+      text-align:center;
+      padding:16px;
+      font-size:0.8rem;
+      margin-top:40px;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<header class="site-header">
-  <nav class="navbar-inner">
-    <!-- kiri -->
-    <div class="brand-box">
-      <div>Warung Ngemil</div>
-      <div class="brand-tag">Snack Time!</div>
-    </div>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar-inner">
+      <div class="brand-box">
+        <div>Warung Ngemil</div>
+        <div class="brand-tag">Snack Time!</div>
+      </div>
 
-    <!-- kanan -->
-    <div class="menu-box">
-      <a href="index.html">Home</a>
-      <a href="produk.html">Produk</a>
-      <a href="order.html">Order</a>
-      <a href="kontak.html">Kontak</a>
+      <div class="menu-box">
+        <a href="index.html">Home</a>
+        <a href="produk.html">Produk</a>
+        <a href="order.html">Order</a>
+        <a href="kontak.html">Kontak</a>
 
-      <!-- status keranjang (readonly di halaman ini) -->
-      <a class="cart-status" style="pointer-events:none; opacity:0.8;">
-        <span class="cart-icon-bubble">🛒</span>
-        <span>
-          <!-- nilai ini nanti kita isi dari total item pesanan -->
-          <span id="cart-count-header">0</span> item |
-          Rp <span id="cart-total-header">0</span>
+        <span class="cart-status">
+          <span class="cart-icon-bubble">🛒</span>
+          <span>
+            <span id="cart-count-header">0</span> item |
+            Rp <span id="cart-total-header">0</span>
+          </span>
         </span>
-      </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <h1>Checkout Pesanan</h1>
+
+    <!-- DAFTAR PESANAN -->
+    <div id="order-list" class="order-list"></div>
+
+    <!-- TOTAL -->
+    <div class="total">
+      <span>Total Bayar:</span>
+      <span>Rp <span id="total-harga">0</span></span>
     </div>
-  </nav>
-</header>
 
-<!-- CONTENT -->
-<div class="container">
-  <h1>Checkout Pesanan</h1>
+    <!-- FORM PEMBELI -->
+    <h2 style="margin-top:30px;">Data Pembeli</h2>
 
-  <!-- DAFTAR PESANAN -->
-  <div id="order-list" class="order-list"></div>
+    <form id="checkout-form">
+      <label>Nama Lengkap</label>
+      <input type="text" id="nama" required placeholder="contoh: Muhamad Dedi" />
 
-  <!-- TOTAL -->
-  <div class="total">
-    <span>Total Bayar:</span>
-    <span>Rp <span id="total-harga">0</span></span>
+      <label>Alamat Lengkap</label>
+      <textarea id="alamat" rows="3" required placeholder="contoh: Jl. Raya Ngemil No.10, Tangerang"></textarea>
+
+      <label>Nomor WhatsApp</label>
+      <input type="tel" id="nomor" required placeholder="contoh: 0818xxxxxxx" />
+
+      <button id="wa-submit" type="submit">Kirim ke WhatsApp ➜</button>
+    </form>
   </div>
 
-  <!-- FORM PEMBELI -->
-  <h2 style="margin-top:30px;">Data Pembeli</h2>
-  <form id="checkout-form">
-    <label>Nama Lengkap</label>
-    <input type="text" id="nama" required placeholder="contoh: Muhamad Dedi">
+  <footer>© 2025 Warung Ngemil — dibuat oleh Muhamad Dedi</footer>
 
-    <label>Alamat Lengkap</label>
-    <textarea id="alamat" rows="3" required placeholder="contoh: Jl. Raya Ngemil No.10, Tangerang"></textarea>
+  <script>
+    // --- Ambil data pesanan dari URL ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const pesanan = urlParams.get('pesanan');
+    const total = urlParams.get('total');
 
-    <label>Nomor WhatsApp</label>
-    <input type="tel" id="nomor" required placeholder="contoh: 0818xxxxxxx">
+    const orderList = document.getElementById('order-list');
+    const totalHarga = document.getElementById('total-harga');
 
-    <button type="submit">Kirim ke WhatsApp ➜</button>
-  </form>
-</div>
+    // header mini cart di navbar checkout
+    const cartCountHeader = document.getElementById('cart-count-header');
+    const cartTotalHeader = document.getElementById('cart-total-header');
 
-<footer>
-  © 2025 Warung Ngemil — dibuat oleh Muhamad Dedi
-</footer>
+    if (pesanan) {
+      const items = pesanan.split(',');
 
-<script>
-  // --- Ambil data pesanan dari URL ---
-  const urlParams = new URLSearchParams(window.location.search);
-  const pesanan = urlParams.get('pesanan');
-  const total = urlParams.get('total');
+      items.forEach(i => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `<span>${i.trim()}</span><span></span>`;
+        orderList.appendChild(div);
+      });
 
-  const orderList = document.getElementById('order-list');
-  const totalHarga = document.getElementById('total-harga');
+      const totalInt = parseInt(total || "0", 10);
+      totalHarga.textContent = totalInt.toLocaleString("id-ID");
 
-  // header mini cart di navbar checkout
-  const cartCountHeader = document.getElementById('cart-count-header');
-  const cartTotalHeader = document.getElementById('cart-total-header');
+      cartCountHeader.textContent = String(items.length);
+      cartTotalHeader.textContent = totalInt.toLocaleString("id-ID");
+    } else {
+      orderList.innerHTML =
+        '<p style="color:#666;font-size:0.9rem;">Keranjang kosong. Silakan pilih produk di halaman <a href="produk.html" style="color:#ff8a00;font-weight:600;text-decoration:none;">produk</a>.</p>';
+      cartCountHeader.textContent = "0";
+      cartTotalHeader.textContent = "0";
+    }
 
-  if (pesanan) {
-    // pisahkan item berdasarkan koma
-    const items = pesanan.split(',');
+    // --- Event tracking (GA4) untuk begin_checkout ---
+    const beginCheckoutTrackedKey = "wn_begin_checkout_tracked";
+    if (pesanan && !sessionStorage.getItem(beginCheckoutTrackedKey)) {
+      try {
+        gtag('event', 'begin_checkout', {
+          currency: 'IDR',
+          value: parseInt(total || "0", 10) || 0,
+          items_count: pesanan.split(',').length
+        });
+      } catch (e) {}
+      sessionStorage.setItem(beginCheckoutTrackedKey, "1");
+    }
 
-    // render setiap item ke daftar pesanan
-    items.forEach(i => {
-      const div = document.createElement('div');
-      div.className = 'item';
-      div.innerHTML = `
-        <span>${i.trim()}</span>
-        <span></span>
-      `;
-      orderList.appendChild(div);
+    // --- Kirim ke WhatsApp ---
+    const form = document.getElementById('checkout-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value.trim();
+      const alamat = document.getElementById('alamat').value.trim();
+      const nomor = document.getElementById('nomor').value.trim();
+
+      const totalInt = parseInt(total || "0", 10) || 0;
+      const totalShow = totalInt.toLocaleString("id-ID");
+      const pesananShow = pesanan ? pesanan : "(kosong)";
+
+      // Track purchase intent (custom event)
+      try {
+        gtag('event', 'submit_order_whatsapp', {
+          currency: 'IDR',
+          value: totalInt,
+          items_count: pesanan ? pesanan.split(',').length : 0
+        });
+      } catch (e) {}
+
+      const pesan =
+        `Halo Warung Ngemil 👋%0A%0A` +
+        `Saya ingin pesan:%0A${encodeURIComponent(pesananShow)}%0A%0A` +
+        `Total: Rp ${encodeURIComponent(totalShow)}%0A%0A` +
+        `Nama: ${encodeURIComponent(nama)}%0A` +
+        `Alamat: ${encodeURIComponent(alamat)}%0A` +
+        `No. WA: ${encodeURIComponent(nomor)}`;
+
+      const url = `https://wa.me/62895405090125?text=${pesan}`;
+      window.open(url, '_blank');
+
+      setTimeout(() => {
+        window.location.href = 'sukses.html';
+      }, 1200);
     });
-
-    // total harga
-    const totalInt = parseInt(total || "0");
-    totalHarga.textContent = totalInt.toLocaleString();
-
-    // update header cart info (jumlah item & total)
-    cartCountHeader.textContent = items.length;
-    cartTotalHeader.textContent = totalInt.toLocaleString();
-  } else {
-    orderList.innerHTML = '<p style="color:#666;font-size:0.9rem;">Keranjang kosong. Silakan pilih produk di halaman <a href="produk.html" style="color:#ff8a00;font-weight:600;text-decoration:none;">produk</a>.</p>';
-    cartCountHeader.textContent = "0";
-    cartTotalHeader.textContent = "0";
-  }
-
-  // --- Kirim ke WhatsApp ---
-  const form = document.getElementById('checkout-form');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const nama = document.getElementById('nama').value;
-    const alamat = document.getElementById('alamat').value;
-    const nomor = document.getElementById('nomor').value;
-
-    // fallback kalau total/pesanan kosong
-    const totalShow = total ? parseInt(total).toLocaleString() : "0";
-    const pesananShow = pesanan ? pesanan : "(kosong)";
-
-    const pesan =
-      `Halo Warung Ngemil 👋%0A%0A` +
-      `Saya ingin pesan:%0A${encodeURIComponent(pesananShow)}%0A%0A` +
-      `Total: Rp ${encodeURIComponent(totalShow)}%0A%0A` +
-      `Nama: ${encodeURIComponent(nama)}%0A` +
-      `Alamat: ${encodeURIComponent(alamat)}%0A` +
-      `No. WA: ${encodeURIComponent(nomor)}`;
-
-    // ganti nomor ini dengan nomor admin kamu (format 62...)
-    const url = `https://wa.me/62895405090125?text=${pesan}`;
-
-    // buka WhatsApp di tab baru
-    window.open(url, '_blank');
-
-    // redirect ke halaman sukses dalam 2 detik
-    setTimeout(() => {
-      window.location.href = 'sukses.html';
-    }, 2000);
-  });
-</script>
-<button type="submit" onclick="gtag('event', 'begin_checkout');">
-  Kirim ke WhatsApp ➜
-</button>
+  </script>
 
 </body>
 </html>
